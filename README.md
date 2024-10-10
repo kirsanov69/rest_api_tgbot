@@ -21,7 +21,7 @@ This is a Telegram bot that provides weather information using the OpenWeatherMa
 
     ```sh
     git clone https://github.com/kirsanov69/rest_api_tgbot
-    cd weather-telegram-bot
+    cd rest_api_tgbot
     ```
 
 2. Create a `.env` file in the root directory and add your environment variables:
