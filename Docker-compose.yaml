@@ -1,0 +1,29 @@
+
+services:
+  web:
+    build: .
+    container_name: weatherbot
+    ports:
+      - "5000:5000"
+    environment:
+      TELEGRAM_BOT_TOKEN: 6451700525:AAHrvFtmXWikJr643nkGYgkDbm8UcFm_9oQ
+      WEATHER_API_KEY: 6451700525:AAHrvFtmXWikJr643nkGYgkDbm8UcFm_9oQ
+      DATABASE_URL: postgresql+asyncpg://postgres:123@db/weatherbot
+      WEBHOOK_URL: https://5c6c-212-58-102-223.ngrok-free.app/webhook
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    container_name: weatherbot_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: weatherbot
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

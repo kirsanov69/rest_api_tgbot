@@ -1,0 +1,32 @@
+openapi: 3.0.0
+info:
+  title: Weather Bot API
+  version: 1.0.0
+paths:
+  /logs:
+    get:
+      summary: Получить все запросы пользователей
+      parameters:
+        - in: query
+          name: user_id
+          schema:
+            type: string
+          description: Идентификатор пользователя для фильтрации запросов
+      responses:
+        '200':
+          description: Успешный запрос
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    user_id:
+                      type: string
+                    command:
+                      type: string
+                    request_time:
+                      type: string
+                    response:
+                      type: string
