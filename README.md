@@ -20,7 +20,7 @@ This is a Telegram bot that provides weather information using the OpenWeatherMa
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/yourusername/weather-telegram-bot.git
+    git clone https://github.com/kirsanov69/rest_api_tgbot
     cd weather-telegram-bot
     ```
 
